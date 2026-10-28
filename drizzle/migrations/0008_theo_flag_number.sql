@@ -1,0 +1,2 @@
+UPDATE public.claims SET rejection_reason = '1 line item flagged for revision: #2 Front Bumper' WHERE id = 'CLM-24-10426';
+UPDATE public.demo_claims_snapshot SET rejection_reason = '1 line item flagged for revision: #2 Front Bumper' WHERE id = 'CLM-24-10426';

@@ -1,0 +1,76 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1792341340959,
+      "tag": "0000_migration",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792359199783,
+      "tag": "0001_demo_reset",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792432884494,
+      "tag": "0002_demo_10426_override_metadata",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1792464148645,
+      "tag": "0003_claim_agent_and_submitted_at",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1792475227152,
+      "tag": "0004_claim_review_started_at",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1792506419220,
+      "tag": "0005_claim_active_review_seconds",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1792547557641,
+      "tag": "0006_low_confidence_rationales",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1792696193788,
+      "tag": "0007_theo_senior_flag",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1792696221406,
+      "tag": "0008_theo_flag_number",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1792943289164,
+      "tag": "0009_closed_inactive_status",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+ALTER TABLE public.claims DROP CONSTRAINT claims_status_check;
+ALTER TABLE public.claims ADD CONSTRAINT claims_status_check CHECK (status = ANY (ARRAY['Ready for agent review','Awaiting customer photos','Submitted to senior','Returned to agent','Approved','Closed – inactive']));

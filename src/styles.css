@@ -1,0 +1,176 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sev-minor: var(--sev-minor);
+  --color-sev-moderate: var(--sev-moderate);
+  --color-sev-severe: var(--sev-severe);
+  --color-st-ready: var(--st-ready);
+  --color-st-awaiting: var(--st-awaiting);
+  --color-st-submitted: var(--st-submitted);
+  --color-st-returned: var(--st-returned);
+  --color-st-approved: var(--st-approved);
+  --color-highlight: var(--highlight);
+  --color-added: var(--added);
+  --shadow-card: var(--shadow-card-value);
+  --shadow-float: var(--shadow-float-value);
+  --font-sans: var(--app-sans);
+  --font-mono: var(--app-mono);
+}
+
+:root {
+  /* Apple-inspired: soft grey backdrop, white cards, near-black text, Apple blue for actions. */
+  --radius: 0.75rem;
+  --app-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+  /* Data font (IDs, money, counts): the same system font with tabular figures so numbers line up. */
+  --app-mono: var(--app-sans);
+  --background: oklch(0.971 0.003 286.4);
+  --foreground: oklch(0.232 0.004 286.1);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.232 0.004 286.1);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.232 0.004 286.1);
+  --primary: oklch(0.563 0.193 256.2);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.932 0.007 286.3);
+  --secondary-foreground: oklch(0.232 0.004 286.1);
+  --muted: oklch(0.956 0.003 286.3);
+  --muted-foreground: oklch(0.54 0.008 286.1);
+  --accent: oklch(0.956 0.003 286.3);
+  --accent-foreground: oklch(0.232 0.004 286.1);
+  --destructive: oklch(0.6 0.215 28.7);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.923 0.007 286.3);
+  --input: oklch(0.865 0.007 286.3);
+  --ring: oklch(0.563 0.193 256.2);
+  --sev-minor: oklch(0.8 0.165 85);
+  --sev-moderate: oklch(0.72 0.175 58);
+  --sev-severe: oklch(0.62 0.225 28.7);
+  --st-ready: oklch(0.563 0.193 256.2);
+  --st-awaiting: oklch(0.6 0.154 52);
+  --st-submitted: oklch(0.556 0.203 278.1);
+  --st-returned: oklch(0.6 0.215 28.7);
+  --st-approved: oklch(0.6 0.165 147.5);
+  --highlight: oklch(0.965 0.055 93);
+  --added: oklch(0.955 0.024 253.3);
+  --shadow-card-value: 0 1px 2px oklch(0 0 0 / 0.04), 0 4px 16px oklch(0 0 0 / 0.04);
+  --shadow-float-value: 0 12px 40px oklch(0 0 0 / 0.14), 0 2px 8px oklch(0 0 0 / 0.06);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.971 0.003 286.4);
+  --sidebar-foreground: oklch(0.232 0.004 286.1);
+  --sidebar-primary: oklch(0.563 0.193 256.2);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.956 0.003 286.3);
+  --sidebar-accent-foreground: oklch(0.232 0.004 286.1);
+  --sidebar-border: oklch(0.923 0.007 286.3);
+  --sidebar-ring: oklch(0.563 0.193 256.2);
+}
+
+/* Line-item review rows: soft outline on hover, bolder blue outline when selected. */
+@layer components {
+  .item-row {
+    box-shadow: inset 0 0 0 var(--row-ring-w, 0px) var(--row-ring, transparent);
+    transition: box-shadow 140ms ease, background-color 140ms ease;
+  }
+  .item-row:hover {
+    --row-ring-w: 1.5px;
+    --row-ring: color-mix(in oklab, var(--foreground) 28%, transparent);
+  }
+  .item-row[data-selected="true"] {
+    --row-ring-w: 2.5px;
+    --row-ring: var(--primary);
+  }
+  /* Flagged for revision by the Senior Adjuster: amber outline unless the row is selected. */
+  .item-row[data-flagged="true"]:not([data-selected="true"]) {
+    --row-ring-w: 2px;
+    --row-ring: var(--st-awaiting);
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--app-sans);
+    font-size: 14px;
+    letter-spacing: -0.006em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .font-mono,
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.015em;
+  }
+}
